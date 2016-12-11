@@ -1,0 +1,15 @@
+{
+  "name": "rrrr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-devo": "node bin/build",
+    "build-prod": "NODE_ENV=production node bin/build"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^2.1.0-beta.27"
+  }
+}
