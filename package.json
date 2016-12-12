@@ -5,11 +5,14 @@
   "main": "index.js",
   "scripts": {
     "build-devo": "node bin/build",
-    "build-prod": "NODE_ENV=production node bin/build"
+    "build-prod": "NODE_ENV=production node bin/build",
+    "server-devo": "node bin/server",
+    "server-prod": "NODE_ENV=production node bin/server"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "express": "^4.14.0",
     "webpack": "^2.1.0-beta.27"
   }
 }
