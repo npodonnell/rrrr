@@ -1,12 +1,22 @@
+"use strict"
+
+const path = require('path')
 const express = require('express')
 const webpack = require('webpack')
 const middleware = require('webpack-dev-middleware')
 const webpackConfigFactory = require('../buildTools/webpackConfigFactory')
+const webpackMiddlewareConfigFactory = require('../buildTools/webpackMiddlewareConfigFactory')
 
 const basePath = path.resolve(__dirname, '..')
 const prod = (process.env.NODE_ENV === 'production')
 
-const compiler = webpack(webpackConfigFactory(basePath, prod))
+const webpackConfig = webpackConfigFactory(basePath, prod)
+const webpackMiddlewareConfig = webpackMiddlewareConfigFactory(basePath, prod)
+
+const compiler = webpack(webpackConfig)
 const server = express()
+
+server.use(middleware(compiler, webpackMiddlewareConfig))
+server.use(express.static('./webroot'))
 
 server.listen(9999)

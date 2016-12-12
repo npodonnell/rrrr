@@ -1,3 +1,5 @@
+"use strict"
+
 const path = require('path')
 const webpack = require('webpack')
 const webpackConfigFactory = require('../buildTools/webpackConfigFactory')
@@ -5,7 +7,8 @@ const webpackConfigFactory = require('../buildTools/webpackConfigFactory')
 const basePath = path.resolve(__dirname, '..')
 const prod = (process.env.NODE_ENV === 'production')
 
-const compiler = webpack(webpackConfigFactory(basePath, prod))
+const webpackConfig = webpackConfigFactory(basePath, prod)
+const compiler = webpack(webpackConfig)
 
 compiler.run((err, stats) => {
 
