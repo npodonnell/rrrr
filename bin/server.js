@@ -1,5 +1,7 @@
 "use strict"
 
+const port = 9999
+
 const path = require('path')
 const express = require('express')
 const webpack = require('webpack')
@@ -19,4 +21,5 @@ const server = express()
 server.use(middleware(compiler, webpackMiddlewareConfig))
 server.use(express.static('./webroot'))
 
-server.listen(9999)
+server.listen(port)
+console.log(`Server is running on port ${port}`)
