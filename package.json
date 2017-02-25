@@ -6,8 +6,7 @@
   "scripts": {
     "build-devo": "node bin/build",
     "build-prod": "NODE_ENV=production node bin/build",
-    "server-devo": "node bin/server",
-    "server-prod": "NODE_ENV=production node bin/server"
+    "server": "node bin/server"
   },
   "author": "",
   "license": "ISC",
