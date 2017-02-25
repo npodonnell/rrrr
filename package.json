@@ -6,7 +6,8 @@
   "scripts": {
     "build-devo": "node bin/build",
     "build-prod": "NODE_ENV=production node bin/build",
-    "server": "node bin/server"
+    "server": "node bin/server",
+    "clean": "rm dist/*"
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +15,7 @@
     "babel-core": "^6.23.1",
     "babel-loader": "^6.3.2",
     "babel-preset-env": "^1.1.10",
+    "babel-preset-react": "^6.23.0",
     "express": "^4.14.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
