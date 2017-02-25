@@ -17,6 +17,6 @@ compiler.run((err, stats) => {
 	if (err) {
 		console.error("there was an error")
 	} else if (stats) {
-		console.log(jsonStats)
+		console.log("compiled ok")
 	}
 })
