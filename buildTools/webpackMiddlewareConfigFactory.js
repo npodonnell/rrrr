@@ -6,7 +6,6 @@ module.exports = (basePath, prod) => {
 	return {
 		contentBase: path.resolve(basePath, 'webroot'),
 		publicPath: '/js/',
-		hot: true,
 		inline: true
 	}
 }
