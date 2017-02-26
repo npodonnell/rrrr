@@ -12,7 +12,7 @@ module.exports = (basePath, prod) => {
 		output: {
 			path: path.resolve(basePath, 'dist'),
 			filename: 'bundle.js',
-			publicPath: 'http://localhost:9999/js/'
+			publicPath: '/js/'
 		},
 		module: {
 			rules: [
@@ -20,9 +20,16 @@ module.exports = (basePath, prod) => {
 					test: /\.jsx?$/,
 					include: path.resolve(basePath, 'src'),
 					use: {
+						loader: 'react-hot-loader'
+					}
+				},
+				{
+					test: /\.jsx?$/,
+					include: path.resolve(basePath, 'src'),
+					use: {
 						loader: 'babel-loader',
 						options: {
-							presets: ['react']
+							presets: ['es2015', 'stage-0', 'react']
 						}
 					}
 				}

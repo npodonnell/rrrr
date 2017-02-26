@@ -6,16 +6,16 @@
   "scripts": {
     "build-devo": "node bin/build",
     "build-prod": "NODE_ENV=production node bin/build",
-    "serve": "node bin/server",
-    "clean": "rm dist/*"
+    "serve": "node bin/server"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.23.1",
     "babel-loader": "^6.3.2",
-    "babel-preset-env": "^1.1.10",
     "babel-preset-react": "^6.23.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-stage-0": "^6.22.0",
     "express": "^4.14.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
