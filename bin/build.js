@@ -2,7 +2,7 @@
 
 const path = require('path')
 const webpack = require('webpack')
-const webpackConfigFactory = require('../buildTools/webpackConfigFactory')
+const webpackConfigFactory = require('../configFactories/webpackConfigFactory')
 
 const basePath = path.resolve(__dirname, '..')
 const prod = (process.env.NODE_ENV === 'production')
