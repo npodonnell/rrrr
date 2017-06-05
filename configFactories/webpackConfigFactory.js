@@ -4,7 +4,7 @@ const webpack = require('webpack')
 const path = require('path')
 
 module.exports = (basePath, prod) => {
-
+	
 	const extraPlugins = prod ? [
 		new webpack.DefinePlugin({
   			'process.env': {
@@ -17,6 +17,7 @@ module.exports = (basePath, prod) => {
 	]
 
 	return {
+		devtool: prod ? false : 'source-map',
 		entry: [
 			path.resolve(basePath, 'src/index.jsx'),
 			'webpack-hot-middleware/client?path=/__webpack_hmr'

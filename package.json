@@ -7,7 +7,8 @@
     "clean": "rimraf dist",
     "build-devo": "node bin/build",
     "build-prod": "NODE_ENV=production node bin/build",
-    "serve": "node bin/server"
+    "serve-devo": "node bin/server",
+    "serve-prod": "NODE_ENV=production node bin/server"
   },
   "author": "odonnellnoel",
   "license": "ISC",
