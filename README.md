@@ -11,11 +11,8 @@ The philosophy is to keep dependencies to a minimum and instead use low-level co
 Clean:
 `npm run clean`
 
-Development build:
-`npm run build-devo`
+Development build and hot-loading server:
+`npm run devo`
 
-Production build:
-`npm run build-prod`
-
-Run hot-loading server:
-`npm run serve`
+Production build and hot-loading server:
+`npm run prod`

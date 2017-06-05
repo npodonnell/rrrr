@@ -5,10 +5,8 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf dist",
-    "build-devo": "node bin/build",
-    "build-prod": "NODE_ENV=production node bin/build",
-    "serve-devo": "node bin/server",
-    "serve-prod": "NODE_ENV=production node bin/server"
+    "devo": "node bin/build && node bin/server",
+    "prod": "NODE_ENV=production node bin/build && NODE_ENV=production node bin/server"
   },
   "author": "odonnellnoel",
   "license": "ISC",
