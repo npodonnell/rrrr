@@ -1,12 +1,17 @@
 "use strict"
 
-const port = 9997
+const PORT = 9997
+const INDEXFILE = 'index.html'
+const ROOTDIR = 'webroot'
 
 const path = require('path')
 const express = require('express')
 const webpack = require('webpack')
 const middleware = require('webpack-dev-middleware')
 const hotMiddleware = require('webpack-hot-middleware')
+const send = require('send')
+const parseUrl = require('parseurl')
+
 const webpackConfigFactory = require('../configFactories/webpackConfigFactory')
 const webpackMiddlewareConfigFactory = require('../configFactories/webpackMiddlewareConfigFactory')
 
@@ -21,8 +26,23 @@ const server = express()
 
 server.use(middleware(compiler, webpackMiddlewareConfig))
 server.use(hotMiddleware(compiler, { path: '/__webpack_hmr' }))
-server.use(express.static('./webroot'))
 
-server.listen(port)
-console.log(`Server is running on port ${port}`)
+process.chdir(ROOTDIR)
+
+const indexFilename = path.join(process.cwd(), INDEXFILE)
+
+server.get(/^\/static\//, (request, response) => {
+	const filename = path.join(process.cwd(), parseUrl(request).pathname)
+	console.log(`Serving ${filename}`)
+	send(request, filename).pipe(response)
+})
+
+server.get(/.*/, (request, response) => {
+	console.log(`Serving ${indexFilename}`)
+	send(request, indexFilename).pipe(response)
+})
+
+
+server.listen(PORT)
+console.log(`Server is running on port ${PORT}`)
 
