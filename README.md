@@ -6,3 +6,16 @@ This is an attempt to create a self-documenting, comentless codebase on which a 
 
 The philosophy is to keep dependencies to a minimum and instead use low-level components and knit them together using pure javascript. That is to say: no task runner, no webpack-dev-server (I'm using the middleware component and the express server).
 
+# Commands
+
+Clean:
+`npm run clean`
+
+Development build:
+`npm run build-devo`
+
+Production build:
+`npm run build-prod`
+
+Run hot-loading server:
+`npm run serve`
