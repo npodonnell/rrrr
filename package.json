@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "clean": "rimraf dist",
     "build-devo": "node bin/build",
     "build-prod": "NODE_ENV=production node bin/build",
     "serve": "node bin/server"
@@ -22,6 +23,7 @@
     "react-hot-loader": "^1.3.1",
     "webpack": "^2.2.1",
     "webpack-dev-middleware": "^1.10.1",
-    "webpack-hot-middleware": "^2.17.1"
+    "webpack-hot-middleware": "^2.17.1",
+    "rimraf": "latest"
   }
 }
