@@ -4,6 +4,18 @@ const webpack = require('webpack')
 const path = require('path')
 
 module.exports = (basePath, prod) => {
+
+	const extraPlugins = prod ? [
+		new webpack.DefinePlugin({
+  			'process.env': {
+    			NODE_ENV: JSON.stringify('production')
+  			}
+		}),
+		new webpack.optimize.UglifyJsPlugin()
+	] : [
+
+	]
+
 	return {
 		entry: [
 			path.resolve(basePath, 'src/index.jsx'),
@@ -36,7 +48,8 @@ module.exports = (basePath, prod) => {
 			]
 		},
 		plugins: [
-			new webpack.HotModuleReplacementPlugin()
+			new webpack.HotModuleReplacementPlugin(),
+			...extraPlugins
 		]
 	}
 }
