@@ -21,6 +21,11 @@ const prod = (process.env.NODE_ENV === 'production')
 const webpackConfig = webpackConfigFactory(basePath, prod)
 const webpackMiddlewareConfig = webpackMiddlewareConfigFactory(basePath, prod)
 
+
+console.log(JSON.stringify(webpackConfig, null, 4))
+console.log(JSON.stringify(webpackMiddlewareConfig, null, 4))
+
+
 const compiler = webpack(webpackConfig)
 const server = express()
 

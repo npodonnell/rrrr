@@ -25,7 +25,7 @@ module.exports = (basePath, prod) => {
 		output: {
 			path: path.resolve(basePath, 'dist'),
 			filename: 'bundle.js',
-			publicPath: '/js/'
+			publicPath: '/static/js/'
 		},
 		module: {
 			rules: [
